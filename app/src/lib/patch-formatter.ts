@@ -38,6 +38,7 @@ function formatPatchHeader(from: string | null, to: string | null): string {
 function formatPatchHeaderForFile(file: WorkingDirectoryFileChange) {
   switch (file.status.kind) {
     case AppFileStatusKind.New:
+    case AppFileStatusKind.Untracked:
       return formatPatchHeader(null, file.path)
 
     // One might initially believe that renamed files should diff
